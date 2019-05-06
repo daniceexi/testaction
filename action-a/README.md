@@ -1,1 +1,2 @@
-print message
+print message;
+

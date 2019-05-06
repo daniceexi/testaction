@@ -1,6 +1,9 @@
 workflow "print_message" {
+  resolves = [
+    "Hello World",
+    "Hello World-1",
+  ]
   on = "push"
-  resolves = ["Hello World"]
 }
 
 action "action-a/" {
@@ -11,4 +14,8 @@ action "action-a/" {
 action "Hello World" {
   uses = "./action-a"
   needs = ["action-a/"]
+}
+
+action "Hello World-1" {
+  uses = "./action-a"
 }
